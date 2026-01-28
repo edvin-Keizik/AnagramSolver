@@ -11,8 +11,8 @@ namespace AnagramSolver
         private readonly WordProcessor _processor;
         private readonly DictionaryLoader _loader;
 
-        private const int MaxAnagramsToShow = 2;
-        private const int MinWordLength = 10;
+        private const int MaxAnagramsToShow = 10;
+        private const int MinWordLength = 3;
 
 
         public App(string filePath)
@@ -24,6 +24,9 @@ namespace AnagramSolver
 
        public void Run()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+
             Console.WriteLine("Atsisiunciamas zodynas");
             _loader.LoadWords(_filePath, _processor);
             Console.WriteLine("Zodynas atsiustas. Ivesti 0 kad baigti.");
